@@ -1,0 +1,41 @@
+
+
+
+// ------------ algorithm way ------------
+
+const palindrome = (word) => {
+
+    let isPalindrome = true;
+
+    for (let i = 0; i < word.length / 2; i++) {
+      if (word[i] !== word[word.length - i - 1]) {
+        isPalindrome = false;
+        break;
+      }
+    }
+    
+    if (isPalindrome) {
+      console.log( word +" is a palindrome");
+    } else {
+      console.log(word +" is not a palindrome");
+    }
+
+}
+
+
+
+// ---------- whit javascript functions ---------
+
+
+const  isPalindrome = (word) => {
+  
+  if (word.length <= 1) {
+    return true;
+  } else if (word[0] === word[word.length - 1]) {
+    return isPalindrome(word.slice(1, word.length - 1));
+  } else {
+    return false;
+  }
+}
+
+
